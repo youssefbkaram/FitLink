@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+function initFooter() {
   // Adjust spacing for footer columns (responsive)
   const footerGrid = document.querySelector('.footer-grid');
   if (footerGrid) {
@@ -16,4 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     socialLinks[2].href = "https://twitter.com";
     socialLinks.forEach(link => link.target = "_blank");
   }
-});
+}
+
+window.initFooter = initFooter;
+document.addEventListener("DOMContentLoaded", initFooter, { once: true });
