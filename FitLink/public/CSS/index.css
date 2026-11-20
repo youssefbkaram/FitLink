@@ -1,0 +1,620 @@
+@import url("general.css");
+@import url("./navbar.css");
+@import url("./footer.css");
+
+/* Translucent dark blue overlay on the video for #homepage */
+#homepage > * {
+  position: relative;
+  z-index: 2;
+}
+
+#homepage::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(13, 40, 74, 1); /* dark blue, 72% opacity */
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Hero Section */
+
+/* Make sure content inside #homepage is above the overlay */
+
+.hero-section {
+  color: var(--light-text);
+  text-align: center;
+  padding: 80px 20px;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hero-section .hero-logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid var(--accent-color);
+  margin-bottom: 20px;
+  animation: bounceIn 1s ease-out;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hero-section .tagline {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-section h1 {
+  font-size: 4em;
+  margin-bottom: 20px;
+  color: var(--light-text);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-section .slogan {
+  font-size: 1.8em;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.app-buttons .btn {
+  margin: 10px;
+  font-size: 1.1em;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--accent-color);
+  border: none;
+}
+
+.app-buttons .btn:hover {
+  background-color: #3e8e41;
+}
+
+/* Page Sections */
+.page-section {
+  display: none; /* Hidden by default */
+  padding-top: 20px; /* Add padding to account for fixed nav */
+}
+
+.page-section.active-page {
+  display: block; /* Shown when active */
+}
+
+/* Info Section (About) */
+.info-section {
+  background-color: #fff;
+  padding: 60px 0;
+}
+
+.info-section .content-box {
+  background-color: var(--light-grey);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.info-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.info-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-section ul li {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border-right: 5px solid var(--accent-color); /* Highlight for RTL */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+}
+
+.info-section ul li i {
+  font-size: 1.2em;
+  color: var(--accent-color);
+  margin-left: 15px; /* Icon spacing for RTL */
+}
+
+/* Features Section */
+.features-section {
+  padding: 60px 0;
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  text-align: center;
+}
+
+.features-section h2 {
+  color: var(--light-text);
+  margin-bottom: 40px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.feature-item {
+  background-color: var(--secondary-color);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-10px);
+  background-color: #1a4478; /* Slightly darker */
+}
+
+.feature-item h3 {
+  color: var(--light-text);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.feature-item i {
+  font-size: 2em;
+  color: var(--accent-color);
+}
+
+/* Preview Sections (Academies & Trainers) */
+.preview-section {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.preview-section h2 {
+  margin-bottom: 15px;
+}
+
+.section-description {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: right; /* Align card content to right */
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-img.circle-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent-color);
+  margin: 20px auto 10px auto; /* Center for trainer cards */
+  display: block;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.card-meta {
+  font-size: 0.95em;
+  color: #666;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+}
+
+.card-meta i {
+  color: var(--secondary-color);
+}
+
+.trainer-card .card-body {
+  text-align: center; /* Center text for trainer cards */
+}
+
+.view-more {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.btn-more {
+  background-color: var(--accent-color);
+  color: var(--light-text);
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-more:hover {
+  background-color: #3e8e41;
+}
+
+.btn-more i {
+  margin-right: 0; /* Override default for RTL */
+  margin-left: 10px; /* Arrow pointing left for RTL */
+}
+
+/* Parent Dashboard Section */
+.parent-dashboard-section {
+  background-color: var(--light-grey);
+  padding: 60px 0;
+  text-align: center;
+}
+
+.parent-dashboard-section h2 {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.parent-dashboard-section h2 i {
+  color: var(--accent-color);
+  font-size: 1.5em;
+}
+
+.parent-dashboard-section .content-box {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: right;
+}
+
+.parent-dashboard-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.parent-dashboard-section ul li {
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border-right: 5px solid var(--secondary-color); /* Highlight for RTL */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+}
+
+.parent-dashboard-section ul li i {
+  font-size: 1.2em;
+  color: var(--secondary-color);
+  margin-left: 15px; /* Icon spacing for RTL */
+}
+
+/* Detail Pages (Academies & Trainers) */
+.academy-details-page,
+.trainer-details-page {
+  background-color: var(--light-grey);
+  min-height: calc(100vh - 100px); /* Adjust for footer/header */
+  padding: 40px 0;
+}
+
+.detail-box {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  text-align: right;
+  position: relative;
+}
+
+.close-detail-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px; /* Position to the left for RTL */
+  font-size: 1.2em;
+  color: #dc3545; /* Red color */
+  z-index: 10;
+  transition: color 0.3s ease;
+}
+
+.close-detail-btn:hover {
+  color: #c82333;
+}
+
+.close-detail-btn i {
+  margin-left: 5px; /* Space icon from text for RTL */
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 20px;
+}
+
+.detail-img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 3px solid var(--accent-color);
+}
+
+.detail-img.circle-img {
+  border-radius: 50%;
+}
+
+.detail-info {
+  flex: 1;
+}
+
+.detail-info h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.detail-meta {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.detail-meta i {
+  color: var(--secondary-color);
+}
+
+.detail-body h2 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+  border-right: 4px solid var(--accent-color); /* Highlight for RTL */
+  padding-right: 10px;
+}
+
+.detail-body ul {
+  list-style: disc; /* Use bullets for lists in detail body */
+  padding-right: 25px; /* Indent for bullets */
+  margin-bottom: 20px;
+}
+
+.detail-body ul li {
+  margin-bottom: 8px;
+  display: list-item; /* Ensure list item behavior */
+}
+
+.detail-body .detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+  justify-content: flex-end; /* Align buttons to the left in RTL */
+}
+
+/* Improve contrast and spacing for hero overlay */
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  background: rgba(13, 40, 74, 0.82);
+  border-radius: 22px;
+  padding: 56px 36px;
+  text-align: center;
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
+  box-shadow: 0 4px 24px #1c4d8c44;
+}
+
+/* Make feature cards more visually appealing */
+.feature-card {
+  background: #162040;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px #1c4d8c33;
+  padding: 32px 24px;
+  min-width: 220px;
+  max-width: 320px;
+  flex: 1 1 220px;
+  text-align: center;
+  color: #fff;
+  border: 2px solid #1c4d8c;
+  transition: border 0.2s, box-shadow 0.2s, transform 0.2s;
+  margin-bottom: 16px;
+}
+.feature-card:hover {
+  border-color: #43a047;
+  box-shadow: 0 8px 24px 0 #43a04755;
+  transform: translateY(-4px) scale(1.03);
+}
+
+/* Add subtle shadow to how-section and cta-section */
+.how-section,
+.cta-section {
+  box-shadow: 0 2px 12px #1c4d8c22;
+  border-radius: 14px;
+  background: rgba(20, 32, 56, 0.85);
+  padding: 32px 18px;
+  margin-top: 32px;
+}
+
+/* Background Video */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+  min-width: 100%;
+  min-height: 100%;
+  background: #0d284a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-nav .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-logo {
+    margin: 0 0 15px 0;
+  }
+
+  .nav-links {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-item {
+    width: 100%;
+    text-align: center;
+  }
+
+  .auth-buttons {
+    margin-top: 15px;
+    justify-content: center;
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .user-info {
+    margin-top: 15px;
+    justify-content: center;
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .hero-section h1 {
+    font-size: 3em;
+  }
+
+  .hero-section .slogan {
+    font-size: 1.4em;
+  }
+
+  .app-buttons {
+    flex-direction: column;
+  }
+
+  .app-buttons .btn {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .features-grid,
+  .cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .detail-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .detail-info {
+    text-align: center;
+  }
+
+  .detail-img {
+    margin-bottom: 20px;
+  }
+
+  .detail-body .detail-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.2em;
+  }
+  h2 {
+    font-size: 1.8em;
+  }
+  h3 {
+    font-size: 1.5em;
+  }
+
+  .hero-section {
+    padding: 60px 15px;
+  }
+
+  .detail-box {
+    padding: 20px;
+  }
+
+  .close-detail-btn {
+    top: 10px;
+    left: 10px;
+  }
+
+  .form-box {
+    padding: 30px 20px;
+  }
+}

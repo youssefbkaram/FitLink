@@ -1,0 +1,148 @@
+@import url("general.css");
+@import url("./navbar.css");
+@import url("./footer.css");
+
+/* Auth Forms */
+.auth-form-section {
+  min-height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.form-box {
+  max-width: 500px;
+  width: 90%;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  text-align: right;
+  position: relative;
+  margin: 0 auto; /* Center horizontally */
+}
+
+.form-box h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.close-detail-btn {
+  color: red;
+  transition: color 0.2s;
+}
+.close-detail-btn:hover {
+  color: rgb(146, 1, 1);
+  transition: color 0.2s;
+}
+
+/* تنسيق الـ combo box لاختيار الرياضة */
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1em;
+  background-color: #fff;
+  direction: rtl;
+  text-align: right;
+  color: var(--dark-text);
+  appearance: none; /* يخفي السهم الافتراضي في بعض المتصفحات */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%230d284a' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left 12px center; /* السهم على اليسار للـ RTL */
+  background-size: 16px;
+}
+
+/* عندما يتم التركيز على الـ combo box */
+.form-group select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(13, 40, 74, 0.2);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--dark-text);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1em;
+  direction: rtl;
+  text-align: right;
+}
+
+/* Center the submit buttons inside the form */
+.auth-form-section .btn-primary-action {
+  width: 100%;
+  display: block;
+  margin: 15px auto 0 auto;
+  justify-content: center;
+  font-size: 1.2em;
+  padding: 15px;
+}
+
+.switch-auth-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1em;
+  color: #666;
+}
+
+.switch-auth-link a {
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+/* لإظهار قائمة الرياضات المختارة */
+#selected-sports {
+  margin-top: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+#selected-sports li {
+  background-color: var(--light-grey);
+  border: 1px solid var(--border-color);
+  padding: 8px 12px;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 5px 5px 0 0;
+  font-size: 0.95em;
+  position: relative;
+  direction: rtl;
+}
+
+#selected-sports li .remove-sport {
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#custom-sport-input {
+  margin-top: 10px;
+  display: none;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+}

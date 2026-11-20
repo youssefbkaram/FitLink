@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <title>إضافة أكاديمية جديدة | FitLink</title>
+    <link rel="stylesheet" href="../CSS/add_academy.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="navbar-container"></div>
+    <main>
+      <section class="section-padding">
+        <div class="container">
+          <h2>إضافة أكاديمية جديدة</h2>
+          <form
+            id="add-academy-form"
+            class="content-box form-box"
+            enctype="multipart/form-data"
+          >
+            <div class="form-group">
+              <label>اسم الأكاديمية</label>
+              <input type="text" id="academy-name" required />
+            </div>
+            <div class="form-group">
+              <label>الدولة</label>
+              <select id="academy-country" required>
+                <option value="EG">مصر 🇪🇬</option>
+                <option value="SA">السعودية 🇸🇦</option>
+                <option value="AE">الإمارات 🇦🇪</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>رقم الهاتف</label>
+              <div class="form-inline">
+                <span id="country-code">+20</span>
+                <input
+                  type="tel"
+                  id="academy-phone"
+                  pattern="[0-9]{8,15}"
+                  maxlength="15"
+                  required
+                  placeholder="رقم الهاتف"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>العنوان</label>
+              <input type="text" id="academy-address" required />
+            </div>
+            <div class="form-group">
+              <label>الرياضات المتاحة</label>
+              <div class="form-inline">
+                <select id="sports-select">
+                  <option value="">اختر رياضة</option>
+                  <option value="كرة القدم">كرة القدم</option>
+                  <option value="سباحة">سباحة</option>
+                  <option value="كاراتيه">كاراتيه</option>
+                  <option value="كرة السلة">كرة السلة</option>
+                  <option value="جيم">جيم</option>
+                  <option value="يوجا">يوجا</option>
+                  <option value="تايكوندو">تايكوندو</option>
+                  <option value="تنس">تنس</option>
+                </select>
+                <button type="button" id="add-sport-btn">إضافة</button>
+              </div>
+              <div class="selected-list" id="selected-sports"></div>
+            </div>
+            <div class="form-group">
+              <label>الفئة العمرية</label>
+              <div class="form-inline">
+                <input
+                  type="number"
+                  id="age-from"
+                  min="1"
+                  max="99"
+                  step="1"
+                  required
+                  placeholder="من"
+                />
+                <span>إلى</span>
+                <input
+                  type="number"
+                  id="age-to"
+                  min="1"
+                  max="99"
+                  required
+                  placeholder="إلى"
+                />
+                <span>سنة</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>مستوى التدريب</label>
+              <div class="form-inline">
+                <select id="levels-select">
+                  <option value="">اختر مستوى</option>
+                  <option value="مبتدئ">مبتدئ</option>
+                  <option value="متوسط">متوسط</option>
+                  <option value="متقدم">متقدم</option>
+                  <option value="محترف">محترف</option>
+                </select>
+                <button type="button" id="add-level-btn">إضافة</button>
+              </div>
+              <div class="selected-list" id="selected-levels"></div>
+            </div>
+            <div class="form-group">
+              <label>سعر الاشتراك الشهري (جنيه)</label>
+              <input type="number" id="academy-price" min="50" required placeholder="مثال: 500" />
+            </div>
+            <div class="form-group">
+              <label>الوصف</label>
+              <textarea id="academy-description" required></textarea>
+            </div>
+            <div class="form-group">
+              <label>صورة الأكاديمية</label>
+              <input type="file" id="academy-image" accept="image/*" />
+              <img id="preview-img" class="preview-img" style="display: none" />
+            </div>
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-plus-circle"></i> إضافة الأكاديمية
+            </button>
+          </form>
+          <div id="add-academy-msg"></div>
+        </div>
+      </section>
+    </main>
+    <div id="footer-container"></div>
+
+    <script src="../JS/load_basics.js"></script>
+    <script src="../JS/add_academy.js"></script>
+    <script src="../JS/navbar.js" defer></script>
+  <script src="../JS/footer.js"></script>
+  </body>
+</html>

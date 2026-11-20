@@ -1,0 +1,14 @@
+node_modules/
+.env
+.env.*
+!.env.example
+
+BackEnd/users.json
+BackEnd/academies.json
+BackEnd/subscriptions.json
+BackEnd/user_challenges.json
+BackEnd/weekly_rewards.json
+BackEnd/console.log(data.message))
+
+node-v*-x64.msi
+VSCodeUserSetup-*.exe

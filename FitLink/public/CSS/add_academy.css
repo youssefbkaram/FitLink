@@ -1,0 +1,277 @@
+/* FitLink Add Academy CSS */
+@import url("general.css");
+@import url("footer.css");
+@import url("navbar.css");
+
+body {
+  background-size: cover;
+  background-blend-mode: overlay;
+  min-height: 100vh;
+  font-family: 'Cairo', 'Tajawal', 'Arial', sans-serif; /* خط عربي أنيق */
+  font-weight: 400;
+  color: var(--light-text);
+  letter-spacing: 0.01em;
+}
+
+h2 {
+  color: var(--accent-color);
+  margin-bottom: 32px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: center;
+  font-size: 2.1em;
+  animation: fadeInUp 0.7s;
+}
+
+.form-box {
+  background: rgba(20, 32, 56, 0.97);
+  border-radius: 18px;
+  box-shadow: var(--card-shadow);
+  padding: 40px 32px 32px 32px;
+  max-width: 520px;
+  margin: 48px auto;
+  animation: fadeInUp 0.7s;
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  color: var(--accent-color);
+  font-size: 1.08em;
+  margin-bottom: 7px;
+  display: block;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1.5px solid var(--border-color);
+  border-radius: 10px;
+  background: #222e44;
+  color: var(--light-text);
+  font-size: 1.08em;
+  transition: border 0.3s, background 0.3s;
+  margin-top: 4px;
+  margin-bottom: 2px;
+  font-family: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--accent-color);
+  background: #26304a;
+  outline: none;
+}
+
+textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.form-inline {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form-inline input {
+  width: 90px;
+}
+
+.form-inline input[type="tel"] {
+  width: 100%;
+  direction: rtl;
+}
+
+.selected-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.selected-item {
+  background: var(--secondary-color);
+  color: #fff;
+  border-radius: 16px;
+  padding: 6px 16px;
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+  animation: popIn 0.4s;
+}
+
+.selected-item button {
+  background: none;
+  border: none;
+  color: #ffb3b3;
+  margin-right: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: color 0.3s;
+}
+.selected-item button:hover {
+  color: #fff;
+  background: var(--accent-color);
+  border-radius: 50%;
+}
+
+input[type="file"] {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--light-text);
+  font-size: 1em;
+}
+
+.preview-img {
+  max-width: 120px;
+  max-height: 120px;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.08);
+  border: 2px solid var(--border-color);
+  animation: fadeInUp 0.7s;
+}
+
+.btn, button[type="submit"], .btn-primary {
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 0;
+  font-size: 1.15em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  margin-top: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+  letter-spacing: 0.02em;
+}
+
+.btn:hover,
+button[type="submit"]:hover,
+.btn-primary:hover {
+  background: var(--secondary-color);
+  color: #fff;
+  transform: translateY(-2px) scale(1.03);
+}
+
+#add-academy-msg {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 1.1em;
+  min-height: 24px;
+  transition: color 0.3s;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .form-box {
+    padding: 16px 4px;
+  }
+
+  .form-inline {
+    flex-direction: column;
+    gap: 6px;
+    align-items: stretch;
+  }
+}
+
+input[type="file"] {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--light-text);
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  background: var(--secondary-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-size: 1em;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-left: 10px;
+}
+
+input[type="file"]:hover::-webkit-file-upload-button {
+  background: var(--accent-color);
+}
+
+input[type="file"]::file-selector-button {
+  background: var(--secondary-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-size: 1em;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-left: 10px;
+}
+
+input[type="file"]:hover::file-selector-button {
+  background: var(--accent-color);
+}
+
+/* --- زر إضافة الأكاديمية أكثر جاذبية --- */
+button[type="submit"], .btn-primary, .btn-primary-action {
+  background: linear-gradient(90deg, var(--accent-color) 60%, var(--secondary-color) 100%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 0;
+  font-size: 1.18em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+  margin-top: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 12px rgba(76,175,80,0.08);
+}
+
+button[type="submit"]:hover,
+.btn-primary:hover,
+.btn-primary-action:hover {
+  background: linear-gradient(90deg, var(--secondary-color) 60%, var(--accent-color) 100%);
+  color: #fff;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 18px rgba(28,77,140,0.13);
+}
+
+/* --- إخفاء Scroll الصغير في input[type=number] --- */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

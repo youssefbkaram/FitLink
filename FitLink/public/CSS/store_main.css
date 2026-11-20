@@ -1,0 +1,248 @@
+@import url("general.css");
+@import url("navbar.css");
+@import url("footer.css");
+
+body {
+  background: linear-gradient(135deg, var(--primary-color, #0d284a) 60%, var(--secondary-color, #1c4d8c) 100%);
+  min-height: 100vh;
+  color: var(--light-text, #fff);
+  font-family: 'Cairo', 'Tajawal', 'Arial', sans-serif;
+}
+
+.store-hero {
+  background: linear-gradient(90deg, var(--primary-color, #0d284a) 60%, var(--secondary-color, #1c4d8c) 100%);
+  padding: 44px 0 24px 0;
+  text-align: center;
+  border-radius: 0 0 32px 32px;
+  box-shadow: 0 2px 10px 0 rgba(28,77,140,0.10);
+  margin-bottom: 36px;
+  animation: fadeInDown 1s;
+  position: relative;
+  overflow: hidden;
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+.store-hero h1 {
+  color: var(--accent-color, #43a047);
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(76,175,80,0.10);
+}
+.store-hero p {
+  color: var(--light-text, #fff);
+  font-size: 1.18em;
+  margin-bottom: 18px;
+  font-weight: 500;
+}
+.points-box {
+  display: inline-block;
+  background: var(--secondary-color, #1c4d8c);
+  color: var(--accent-color, #43a047);
+  border-radius: 22px;
+  padding: 12px 28px;
+  font-weight: bold;
+  font-size: 1.13em;
+  box-shadow: 0 2px 8px rgba(76,175,80,0.08);
+  margin-top: 10px;
+  animation: popIn 1.2s;
+  border: 2px solid var(--accent-color, #43a047);
+}
+@keyframes popIn {
+  0% { transform: scale(0.7); opacity: 0;}
+  80% { transform: scale(1.1);}
+  100% { transform: scale(1); opacity: 1;}
+}
+.store-products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  justify-content: center;
+  padding: 0 20px 48px 20px;
+}
+.product-card {
+  background: rgba(20, 32, 56, 0.97);
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(28,77,140,0.10);
+  width: 320px;
+  padding: 26px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.18s, box-shadow 0.18s;
+  position: relative;
+  /* animation: fadeInUp 0.8s; */ /* تم إيقاف أنيميشن الكروت */
+  border: 2px solid var(--secondary-color, #1c4d8c);
+}
+.product-card:hover {
+  box-shadow: 0 6px 18px 0 var(--accent-color, #43a047);
+  border-color: var(--accent-color, #43a047);
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+.product-card img {
+  width: 100%;
+  max-width: 260px;
+  height: 140px;
+  object-fit: cover;
+  margin-bottom: 16px;
+  border-radius: 14px;
+  background: var(--secondary-color, #1c4d8c);
+  box-shadow: 0 2px 8px rgba(28,77,140,0.10);
+  display: block;
+}
+.product-card .eco-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: var(--accent-color, #43a047);
+  color: #fff;
+  font-size: 1em;
+  padding: 5px 14px;
+  border-radius: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 1px 4px rgba(76,175,80,0.10);
+  animation: popIn 1.2s;
+  border: 1.5px solid #fff;
+}
+.product-card h3 {
+  margin: 0 0 10px 0;
+  color: var(--accent-color, #43a047);
+  font-size: 1.22em;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(76,175,80,0.10);
+}
+.product-card p {
+  color: var(--light-text, #fff);
+  font-size: 1em;
+  margin-bottom: 12px;
+  min-height: 36px;
+  text-align: center;
+}
+.product-card .price {
+  color: var(--accent-color, #43a047);
+  font-size: 1.13em;
+  font-weight: bold;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+.product-card .points-price {
+  color: var(--secondary-color, #1c4d8c);
+  font-size: 1em;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.product-card button,
+.product-card .buy-with-points {
+  background: var(--accent-color, #43a047);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 11px 30px;
+  font-size: 1.08em;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 8px;
+  box-shadow: 0 2px 8px rgba(76,175,80,0.08);
+  transition:
+    background 0.18s,
+    transform 0.13s,
+    color 0.18s,
+    box-shadow 0.18s;
+  display: inline-block;
+  /* أوقف الأنيميشن هنا */
+  animation: none;
+}
+
+/* زر الشراء يكبر عند الـ hover - تم إلغاء التكبير، فقط لون */
+.product-card button:hover {
+  background: var(--secondary-color, #1c4d8c);
+  color: #fff;
+  transform: scale(1.05);
+  /* transform: scale(1.13); */
+  /* z-index: 2; */
+}
+
+/* زر الشراء بالنقاط يصغر عند الـ hover - تم إلغاء التصغير، فقط لون */
+
+/* زر الشراء بالنقاط لونه أزرق سادة */
+
+.product-card button:active,
+.product-card .buy-with-points:active {
+  background: var(--secondary-color, #1c4d8c);
+  color: #fff;
+  transform: scale(0.97);
+  box-shadow: 0 1px 4px rgba(28,77,140,0.10);
+}
+
+/* يمكنك وضعه في store_main.css أو ملف جديد */
+.product-details-box {
+  background: rgba(20, 32, 56, 0.97);
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(28,77,140,0.10);
+  padding: 36px 28px 28px 28px;
+  margin: 40px auto 60px auto;
+  max-width: 500px;
+  min-height: 300px;
+  animation: fadeInUp 0.7s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.product-details-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 18px;
+  position: relative;
+}
+.product-details-img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 14px;
+  background: var(--secondary-color, #1c4d8c);
+  margin-bottom: 18px;
+}
+.product-details-title {
+  font-size: 1.5em;
+  color: var(--accent-color, #43a047);
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.product-details-meta {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 18px;
+  font-size: 1.08em;
+  color: #fff;
+}
+.product-details-desc {
+  background: var(--secondary-color, #1c4d8c);
+  border-radius: 8px;
+  padding: 14px 12px;
+  color: #fff;
+  font-size: 1.08em;
+  margin-bottom: 18px;
+  line-height: 1.7;
+  text-align: center;
+}
+.product-details-actions {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+@media (max-width: 800px) {
+  .store-products { flex-direction: column; align-items: center; }
+  .product-card { width: 95vw; }
+}

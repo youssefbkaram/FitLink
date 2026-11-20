@@ -1,0 +1,915 @@
+/*
+:root {
+    --primary-color: #0d284a;
+    --secondary-color: #1c4d8c;
+    --accent-color: #4CAF50;
+    --light-grey: #f4f4f4;
+    --dark-text: #333;
+    --light-text: #fff;
+    --border-color: #ddd;
+    --card-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    --button-hover: #0a1f33;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-text);
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+    background-color: #fff;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; }
+
+p {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+    padding-right: 20px;
+    margin-bottom: 15px;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+ul li i {
+    color: var(--accent-color);
+    margin-left: 10px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--light-text);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.btn:hover {
+    background: var(--button-hover);
+}
+
+.btn-primary-action {
+    background: var(--accent-color);
+    color: var(--light-text);
+    padding: 12px 25px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    font-size: 1.1em;
+}
+
+.btn-primary-action:hover {
+    background: #3e8e41;
+}
+
+.btn-secondary-action {
+    background: var(--secondary-color);
+    color: var(--light-text);
+    padding: 12px 25px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    font-size: 1.1em;
+}
+
+.btn-secondary-action:hover {
+    background: #143a6d;
+}
+*/
+
+/* Navigation Bar
+.main-nav {
+    background: var(--primary-color);
+    color: var(--light-text);
+    padding: 15px 0;
+    box-shadow: var(--card-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on small screens
+}
+
+.nav-logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--light-text);
+    margin-left: 20px; /* Space from right edge for RTL
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between main nav items
+}
+
+.nav-item {
+    color: var(--light-text);
+    padding: 8px 15px;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.nav-item:hover {
+    background-color: var(--secondary-color);
+} */
+
+/* Auth Buttons Spacing
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Spacing between login and register buttons
+    margin-right: 15px; /* Adjust margin for RTL
+}
+
+.auth-buttons .login-btn {
+    border: 1px solid var(--light-text);
+}
+
+.auth-buttons .register-btn {
+    background-color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+.auth-buttons .register-btn:hover {
+    background-color: #3e8e41;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-right: 15px; /* Adjust margin for RTL
+}
+
+.user-info #welcome-message {
+    font-weight: bold;
+}
+
+.user-info .logout-btn {
+    background-color: #dc3545; /* Red for logout
+}
+
+.user-info .logout-btn:hover {
+    background-color: #c82333;
+} */
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x800/0d284a/ffffff?text=Fitness+Background') no-repeat center center/cover;
+    color: var(--light-text);
+    text-align: center;
+    padding: 80px 20px;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hero-section .hero-logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid var(--accent-color);
+    margin-bottom: 20px;
+    animation: bounceIn 1s ease-out;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.1); opacity: 0; }
+    60% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+.hero-section .tagline {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-section h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    color: var(--light-text);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-section .slogan {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.app-buttons .btn {
+    margin: 10px;
+    font-size: 1.1em;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--accent-color);
+    border: none;
+}
+
+.app-buttons .btn:hover {
+    background-color: #3e8e41;
+}
+
+/* Page Sections */
+.page-section {
+    display: none; /* Hidden by default */
+    padding-top: 20px; /* Add padding to account for fixed nav */
+}
+
+.page-section.active-page {
+    display: block; /* Shown when active */
+}
+
+/* Info Section (About) */
+.info-section {
+    background-color: #fff;
+    padding: 60px 0;
+}
+
+.info-section .content-box {
+    background-color: var(--light-grey);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.info-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.info-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-section ul li {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-right: 5px solid var(--accent-color); /* Highlight for RTL */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+}
+
+.info-section ul li i {
+    font-size: 1.2em;
+    color: var(--accent-color);
+    margin-left: 15px; /* Icon spacing for RTL */
+}
+
+/* Features Section */
+.features-section {
+    padding: 60px 0;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    text-align: center;
+}
+
+.features-section h2 {
+    color: var(--light-text);
+    margin-bottom: 40px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.feature-item {
+    background-color: var(--secondary-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+    background-color: #1a4478; /* Slightly darker */
+}
+
+.feature-item h3 {
+    color: var(--light-text);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.feature-item i {
+    font-size: 2em;
+    color: var(--accent-color);
+}
+
+/* Preview Sections (Academies & Trainers) */
+.preview-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.preview-section h2 {
+    margin-bottom: 15px;
+}
+
+.section-description {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: right; /* Align card content to right */
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-img.circle-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
+    margin: 20px auto 10px auto; /* Center for trainer cards */
+    display: block;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.card-meta {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+}
+
+.card-meta i {
+    color: var(--secondary-color);
+}
+
+.trainer-card .card-body {
+    text-align: center; /* Center text for trainer cards */
+}
+
+.view-more {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.btn-more {
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-more:hover {
+    background-color: #3e8e41;
+}
+
+.btn-more i {
+    margin-right: 0; /* Override default for RTL */
+    margin-left: 10px; /* Arrow pointing left for RTL */
+}
+
+/* Parent Dashboard Section */
+.parent-dashboard-section {
+    background-color: var(--light-grey);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.parent-dashboard-section h2 {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.parent-dashboard-section h2 i {
+    color: var(--accent-color);
+    font-size: 1.5em;
+}
+
+.parent-dashboard-section .content-box {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: right;
+}
+
+.parent-dashboard-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.parent-dashboard-section ul li {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-right: 5px solid var(--secondary-color); /* Highlight for RTL */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+}
+
+.parent-dashboard-section ul li i {
+    font-size: 1.2em;
+    color: var(--secondary-color);
+    margin-left: 15px; /* Icon spacing for RTL */
+}
+
+
+/* Detail Pages (Academies & Trainers) */
+.academy-details-page, .trainer-details-page {
+    background-color: var(--light-grey);
+    min-height: calc(100vh - 100px); /* Adjust for footer/header */
+    padding: 40px 0;
+}
+
+.detail-box {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    text-align: right;
+    position: relative;
+}
+
+.close-detail-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px; /* Position to the left for RTL */
+    font-size: 1.2em;
+    color: #dc3545; /* Red color */
+    z-index: 10;
+    transition: color 0.3s ease;
+}
+
+.close-detail-btn:hover {
+    color: #c82333;
+}
+
+.close-detail-btn i {
+    margin-left: 5px; /* Space icon from text for RTL */
+}
+
+.detail-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+}
+
+.detail-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid var(--accent-color);
+}
+
+.detail-img.circle-img {
+    border-radius: 50%;
+}
+
+.detail-info {
+    flex: 1;
+}
+
+.detail-info h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.detail-meta {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.detail-meta i {
+    color: var(--secondary-color);
+}
+
+.detail-body h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    border-right: 4px solid var(--accent-color); /* Highlight for RTL */
+    padding-right: 10px;
+}
+
+.detail-body ul {
+    list-style: disc; /* Use bullets for lists in detail body */
+    padding-right: 25px; /* Indent for bullets */
+    margin-bottom: 20px;
+}
+
+.detail-body ul li {
+    margin-bottom: 8px;
+    display: list-item; /* Ensure list item behavior */
+}
+
+.detail-body .detail-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: flex-end; /* Align buttons to the left in RTL */
+}
+
+/* Auth Forms
+.auth-form-section {
+  min-height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light-grey);
+  background-size: cover;
+  background-position: center;
+  background-image: linear-gradient(
+      rgba(13, 40, 74, 0.7),
+      rgba(13, 40, 74, 0.7)
+    ),
+    url("https://placehold.co/1920x1080/0d284a/ffffff?text=Fitness+Login+Background");
+}
+
+.form-box {
+  max-width: 500px;
+  width: 90%;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  text-align: right;
+  position: relative;
+}
+
+.form-box h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--dark-text);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1em;
+  direction: rtl;
+  text-align: right;
+}
+
+/* Center the submit buttons inside the form
+.auth-form-section .btn-primary-action {
+  width: 100%;
+  display: block;
+  margin: 15px auto 0 auto;
+  justify-content: center;
+  font-size: 1.2em;
+  padding: 15px;
+}
+
+.switch-auth-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1em;
+  color: #666;
+}
+
+.switch-auth-link a {
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+/* لإظهار قائمة الرياضات المختارة
+#selected-sports {
+  margin-top: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+#selected-sports li {
+  background-color: var(--light-grey);
+  border: 1px solid var(--border-color);
+  padding: 8px 12px;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 5px 5px 0 0;
+  font-size: 0.95em;
+  position: relative;
+  direction: rtl;
+}
+
+#selected-sports li .remove-sport {
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#custom-sport-input {
+  margin-top: 10px;
+  display: none;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+} */
+
+/* .main-footer {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 40px 0 20px 0;
+    text-align: right; /* Align footer text right
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-col h3 {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.footer-col p, .footer-col ul li {
+    font-size: 0.95em;
+    margin-bottom: 8px;
+}
+
+.footer-col ul {
+    padding: 0; /* Remove default padding for footer list
+}
+
+.footer-col ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--light-text);
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-info i {
+    color: var(--accent-color);
+}
+
+.social-links {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end; /* Align social icons to the left for RTL
+}
+
+.social-links a {
+    color: var(--light-text);
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.7);
+} */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-nav .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-logo {
+        margin: 0 0 15px 0;
+    }
+
+    .nav-links {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .auth-buttons {
+        margin-top: 15px;
+        justify-content: center;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .user-info {
+        margin-top: 15px;
+        justify-content: center;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .hero-section h1 {
+        font-size: 3em;
+    }
+
+    .hero-section .slogan {
+        font-size: 1.4em;
+    }
+
+    .app-buttons {
+        flex-direction: column;
+    }
+
+    .app-buttons .btn {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .features-grid, .cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .detail-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .detail-info {
+        text-align: center;
+    }
+
+    .detail-img {
+        margin-bottom: 20px;
+    }
+
+    .detail-body .detail-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 2.2em; }
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.5em; }
+
+    .hero-section {
+        padding: 60px 15px;
+    }
+
+    .detail-box {
+        padding: 20px;
+    }
+
+    .close-detail-btn {
+        top: 10px;
+        left: 10px;
+    }
+
+    .form-box {
+        padding: 30px 20px;
+    }
+}

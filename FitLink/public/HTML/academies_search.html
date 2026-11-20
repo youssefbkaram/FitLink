@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <title>بحث الأكاديميات | FitLink</title>
+    <link rel="stylesheet" href="../CSS/academies_search.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Tajawal:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <div id="navbar-container"></div>
+    <main>
+      <!-- Filter Button -->
+      <button
+        id="open-filter-modal"
+        class="btn btn-primary-action"
+        style="margin-bottom: 24px"
+      >
+        <i class="fas fa-filter"></i> فلترة الأكاديميات
+      </button>
+
+      <!-- Filter Modal Overlay -->
+      <div
+        id="filter-modal-overlay"
+        class="filter-modal-overlay"
+        style="display: none"
+      >
+        <div class="filter-modal">
+          <h3>فلترة الأكاديميات</h3>
+          <form id="filter-form">
+            <!-- الرياضات -->
+            <div class="filter-group">
+              <label>الرياضات</label>
+              <div class="multi-select" id="filter-sports-multiselect">
+                <select id="sports-options">
+                  <option value="">اختر رياضة</option>
+                  <option value="كرة القدم">كرة القدم</option>
+                  <option value="سباحة">سباحة</option>
+                  <option value="كاراتيه">كاراتيه</option>
+                  <option value="كرة السلة">كرة السلة</option>
+                  <option value="جيم">جيم</option>
+                  <option value="يوجا">يوجا</option>
+                  <option value="تايكوندو">تايكوندو</option>
+                  <option value="تنس">تنس</option>
+                </select>
+                <button
+                  type="button"
+                  id="add-sport-filter-btn"
+                  class="btn btn-secondary-action"
+                  style="margin-right: 6px"
+                >
+                  إضافة
+                </button>
+              </div>
+              <div class="selected-list" id="selected-sports-filter"></div>
+            </div>
+
+            <!-- المستويات -->
+            <div class="filter-group">
+              <label>المستوى</label>
+              <div class="multi-select" id="filter-levels-multiselect">
+                <select id="levels-options">
+                  <option value="">اختر مستوى</option>
+                  <option value="مبتدئ">مبتدئ</option>
+                  <option value="متوسط">متوسط</option>
+                  <option value="متقدم">متقدم</option>
+                  <option value="محترف">محترف</option>
+                </select>
+                <button
+                  type="button"
+                  id="add-level-filter-btn"
+                  class="btn btn-secondary-action"
+                  style="margin-right: 6px"
+                >
+                  إضافة
+                </button>
+              </div>
+              <div class="selected-list" id="selected-levels-filter"></div>
+            </div>
+
+            <div class="filter-group">
+              <label>العنوان</label>
+              <input
+                type="text"
+                id="filter-address"
+                placeholder="ابحث بالعنوان..."
+              />
+            </div>
+            <div class="filter-group">
+              <label>العمر</label>
+              <div class="filter-inline">
+                <input
+                  type="number"
+                  id="filter-age-from"
+                  min="1"
+                  max="99"
+                  placeholder="من"
+                />
+                <span>إلى</span>
+                <input
+                  type="number"
+                  id="filter-age-to"
+                  min="1"
+                  max="99"
+                  placeholder="إلى"
+                />
+              </div>
+            </div>
+            <div class="filter-group">
+              <label>السعر</label>
+              <div class="filter-inline">
+                <input
+                  type="number"
+                  id="filter-price-from"
+                  min="0"
+                  placeholder="من"
+                />
+                <span>إلى</span>
+                <input
+                  type="number"
+                  id="filter-price-to"
+                  min="0"
+                  placeholder="إلى"
+                />
+              </div>
+            </div>
+            <div style="display: flex; gap: 12px; margin-top: 18px">
+              <button
+                id="filter-cancel-btn"
+                class="btn"
+                type="button"
+                style="background: #888"
+              >
+                إلغاء
+              </button>
+              <button class="btn btn-primary-action" type="submit">بحث</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="container">
+        <h2>بحث الأكاديميات</h2>
+        <div id="academies-list" class="academies-list"></div>
+      </div>
+    </main>
+    <div id="footer-container"></div>
+    <script src="../JS/load_basics.js"></script>
+    <script src="../JS/navbar.js"></script>
+    <script src="../JS/academies_search.js"></script>
+  <script src="../JS/footer.js"></script>
+  </body>
+</html>

@@ -1,0 +1,125 @@
+@import url("general.css");
+@import url("./navbar.css");
+@import url("./footer.css");
+
+#academy-details {
+  position: relative;
+}
+#academy-details .back-btn {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  background: none;
+  color: #e53935;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  font-size: 1.08em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: none;
+  transition: color 0.18s;
+  z-index: 2;
+  display: block;
+}
+#academy-details .back-btn:hover {
+  color: #b71c1c;
+  text-decoration: underline;
+}
+
+.academy-details-box {
+  position: relative; /* أضف هذا السطر */
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  padding: 36px 28px 28px 28px;
+  margin: 40px auto 60px auto;
+  max-width: 650px;
+  min-height: 300px;
+  animation: fadeInUp 0.7s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.academy-details-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.academy-details-img {
+  width: 220px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(28,77,140,0.08);
+  margin-bottom: 18px;
+  background: #eee;
+}
+
+.academy-details-title {
+  font-size: 2em;
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.academy-details-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 32px;
+  justify-content: center;
+  margin-bottom: 18px;
+  font-size: 1.08em;
+  color: #444;
+}
+
+.academy-details-meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.academy-details-section {
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.academy-details-section h4 {
+  color: var(--accent-color);
+  margin-bottom: 8px;
+  font-size: 1.1em;
+}
+
+.academy-details-section ul {
+  padding-right: 18px;
+}
+
+.academy-details-section li {
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.academy-details-desc {
+  background: var(--light-grey);
+  border-radius: 8px;
+  padding: 14px 12px;
+  color: #222;
+  font-size: 1.08em;
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+  .academy-details-box {
+    padding: 18px 4px;
+    max-width: 98vw;
+  }
+  .academy-details-img {
+    width: 100%;
+    height: 120px;
+  }
+}

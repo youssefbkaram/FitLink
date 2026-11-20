@@ -1,0 +1,40 @@
+<!-- navbar.html -->
+<nav class="main-nav">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <img src="../Images/logo-transparent.png" alt="FitLink" width="100px">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-item">الرئيسية</a></li>
+      <li id="academies-nav-item" style="display:none;"><a href="academies_search.html">الأكاديميات</a></li>
+      <li id="coach-academies-nav-item" style="display:none;"><a href="coach_academies.html">أكاديمياتي</a></li>
+      <li id="add-academy-nav-item" style="display:none;">
+        <a href="add_academy.html"><i class="fas fa-plus-circle"></i> إضافة أكاديمية</a>
+      </li>
+      <li id="store-nav-item" style="display:none;"><a href="store_main.html"><i class="fas fa-store"></i> المتجر</a></li>
+      <li id="challenges-nav-item" style="display:none;">
+        <a href="challenges.html"><i class="fas fa-trophy"></i> التحديات</a>
+      </li>
+    </ul>
+    <div class="auth-buttons" id="auth-section">
+      <a href="login.html" class="nav-item login-btn">تسجيل الدخول</a>
+      <a href="signup.html" class="nav-item register-btn">إنشاء حساب</a>
+    </div>
+    <div class="user-info" id="user-info-section" style="display: none">
+      <div class="user-menu">
+        <button id="user-dropdown-toggle">
+          <i class="fas fa-user-circle"></i>
+          <span id="username-display"></span>
+        </button>
+        <ul id="user-menu-list" class="dropdown-menu">
+          <!-- سيتم حقن النقاط هنا للمتدرب -->
+          <li id="dropdown-coach-academies"><a href="coach_academies.html">أكاديمياتي</a></li>
+          <li><a href="settings.html">الإعدادات</a></li>
+          <li>
+            <a href="#" id="logout-btn" class="logout-link">تسجيل الخروج</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

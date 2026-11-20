@@ -1,0 +1,19 @@
+{
+  "name": "fitlink",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node BackEnd/index.js",
+    "db:migrate": "node BackEnd/migrate.js",
+    "db:import:legacy": "node BackEnd/import-legacy-data.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "pg": "^8.13.1"
+  }
+}
