@@ -13,7 +13,7 @@ The legacy import reads local JSON files from `BackEnd/`. Those files are intent
 
 ## Vercel and Neon
 
-Import the GitHub repository into Vercel and set the project **Root Directory** to `FitLink`. Add `DATABASE_URL` as a Vercel environment variable using the pooled Neon connection string, then deploy. Run `npm run db:migrate` once against the same Neon database before opening the deployed app. Vercel detects the Express app from the root `index.js` entry point and serves the files in `public/` through its CDN. The static site and API use the same origin; no localhost URL or permissive CORS configuration is needed.
+Import the GitHub repository into Vercel and set the project **Root Directory** to `FitLink`. Add `DATABASE_URL` as a Vercel environment variable using the pooled Neon connection string, then deploy. Run `npm run db:migrate` once against the same Neon database before opening the deployed app. Vercel routes `/api/*` requests through `api/[...path].js` to the Express app in `BackEnd/` and serves files in `public/` through its CDN. The static site and API use the same origin; no localhost URL or permissive CORS configuration is needed.
 
 The local Express server is `BackEnd/index.js`. Never commit `.env` or private JSON data files.
 
