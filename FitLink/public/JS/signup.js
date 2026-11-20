@@ -81,7 +81,7 @@ if (registerForm) {
       return;
     }
 
-    const pwdRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    const pwdRegex = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
     if (!pwdRegex.test(password)) {
       alert("كلمة المرور يجب أن تكون 8 أحرف على الأقل وتحتوي على أرقام وحروف.");
       return;
